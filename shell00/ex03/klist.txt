@@ -1,0 +1,5 @@
+Credentials cache: API:1227803F-EE3C-4E23-B3C5-EC0FBC4441D1
+        Principal: pedmarti@42MADRID.COM
+
+  Issued                Expires               Principal
+Aug  2 14:06:30 2021  Aug  3 00:06:25 2021  krbtgt/42MADRID.COM@42MADRID.COM
