@@ -6,7 +6,7 @@
 /*   By: pedmarti <pedmarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/19 11:31:01 by pedmarti          #+#    #+#             */
-/*   Updated: 2021/08/19 18:31:09 by pedmarti         ###   ########.fr       */
+/*   Updated: 2021/08/19 18:32:47 by pedmarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,7 @@ int check_base(char *base)
 	}
 	return(1);
 }
+
 void	ft_put_nbr_base(int nbr, char *base)
 {
 	unsigned int	y;
@@ -72,9 +73,4 @@ void	ft_put_nbr_base(int nbr, char *base)
 			ft_put_nbr_base(y / len, base);
 		print (base[y % len]);
 	}
-}
-
-int main (void)
-{
-	ft_put_nbr_base(6, "01");
 }
