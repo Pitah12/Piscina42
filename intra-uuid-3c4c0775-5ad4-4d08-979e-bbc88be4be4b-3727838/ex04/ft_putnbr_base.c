@@ -6,7 +6,7 @@
 /*   By: pedmarti <pedmarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/19 11:31:01 by pedmarti          #+#    #+#             */
-/*   Updated: 2021/08/19 16:05:33 by pedmarti         ###   ########.fr       */
+/*   Updated: 2021/08/19 18:31:09 by pedmarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,23 +28,53 @@ int	str_len(char *base)
 	}
 	return (len);
 }
+
+int check_base(char *base)
+{
+	int	i;
+	int k;
+
+	i = 0;
+	k = 0;
+	if (str_len(base) < 2)
+	{
+		return (0);
+	}
+	while (base[i])
+	{
+		k = i + 1;
+		while (base[k] != '\0')
+		{
+			if (base[i] == base[k])
+				return (0);
+			k++;
+		}
+		if (base[i] == '+' || base[i] == '-')
+			return (0);
+		i++;
+	}
+	return(1);
+}
 void	ft_put_nbr_base(int nbr, char *base)
 {
 	unsigned int	y;
 	int len = str_len(base);
 
 	y = nbr;
-	if (nbr < 0)
+	if (check_base(base) != 0)
 	{
-		print ('-');
-		y = nbr * -1;
+		if (nbr < 0)
+		{
+			print ('-');
+			y = nbr * -1;
+		}
+		if ((y / len) > 0)
+			ft_put_nbr_base(y / len, base);
+		print (base[y % len]);
 	}
-	if ((y / len) > 0)
-		ft_put_nbr_base(y / len, base);
-	print (y % len + 48);
 }
 
 int main (void)
 {
-	ft_put_nbr_base(6, "0123456789");
+	ft_put_nbr_base(6, "01");
 }
