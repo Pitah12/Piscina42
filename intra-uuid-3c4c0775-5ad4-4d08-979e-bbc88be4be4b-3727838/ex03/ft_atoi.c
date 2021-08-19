@@ -6,7 +6,7 @@
 /*   By: pedmarti <pedmarti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/17 12:47:36 by pedmarti          #+#    #+#             */
-/*   Updated: 2021/08/18 18:54:04 by pedmarti         ###   ########.fr       */
+/*   Updated: 2021/08/19 11:28:33 by pedmarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,14 +40,4 @@ int		ft_atoi(char *str)
 		i++;
 	}
 	return (nbr * neg);
-}
-
-int    main(void)
-{
-    char *c;
-    
-    c = "--+-+--+1234ab567";
-    printf("%i\n", ft_atoi(c));
-	printf("%i", atoi(c));
-    return (0);
 }
